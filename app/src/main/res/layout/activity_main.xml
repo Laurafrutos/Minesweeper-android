@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    tools:context=".activities.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#E0E0E0"
+    android:padding="16dp">
 
-    <TextView
+    <!-- Panel superior: Estado del juego y botón de reinicio -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡A jugar!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333333" />
+
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔄 Reiniciar Juego"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Tablero de juego (GridLayout) -->
+    <!-- Definimos 8 columnas para un tablero de 8x8 -->
+    <GridLayout
+        android:id="@+id/gridLayoutBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:columnCount="8"
+        android:rowCount="8"
+        android:background="#BDBDBD"
+        android:padding="4dp">
+    </GridLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
