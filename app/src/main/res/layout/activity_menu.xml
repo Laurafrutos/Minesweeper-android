@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#1E1E2E">
+
+    <!-- Icono o Título Principal -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="💣"
+        android:textSize="64sp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BUSCAMINAS"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Botón Jugar -->
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="🎮 Jugar Partida"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#50FA7B"
+        android:textColor="#1E1E2E"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón Puntuaciones -->
+    <Button
+        android:id="@+id/btnScores"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="🏆 Mejores Tiempos"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#3B3B4F"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón Salir -->
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="🚪 Salir"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#2A2A3C"
+        android:textColor="#FF5555"/>
+
+</LinearLayout>

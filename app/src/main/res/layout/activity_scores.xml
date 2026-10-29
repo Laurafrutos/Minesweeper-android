@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#1E1E2E">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏆 Mejores Tiempos"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="32dp"/>
+
+    <!-- Tarjeta o contenedor para listar las puntuaciones -->
+    <TextView
+        android:id="@+id/tvScoresList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cargando puntuaciones..."
+        android:textColor="#A6ACCD"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="#2A2A3C"
+        android:padding="24dp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="⬅️ Volver al Menú"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#3B3B4F"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
