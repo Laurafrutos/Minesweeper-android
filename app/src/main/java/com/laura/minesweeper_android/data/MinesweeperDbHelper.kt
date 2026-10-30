@@ -21,7 +21,7 @@ class MinesweeperDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
         onCreate(db)
     }
 
-    // --- Métodos para insertar y leer directamente ---
+
 
     fun insertScore(time: Int) {
         val db = writableDatabase
