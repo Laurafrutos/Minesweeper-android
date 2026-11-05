@@ -1,3 +1,31 @@
 <resources>
-    <string name="app_name">Minesweeper-android</string>
+    <!-- Nombre de la aplicación -->
+    <string name="app_name">Buscaminas Android</string>
+
+    <!-- Menú Principal -->
+    <string name="menu_title">BUSCAMINAS</string>
+    <string name="btn_play_normal">🎮 Modo Normal (8x8)</string>
+    <string name="btn_play_hard">🔥 Modo Difícil (12x12)</string>
+    <string name="btn_scores">🏆 Mejores Tiempos</string>
+    <string name="btn_exit">🚪 Salir</string>
+
+    <!-- Pantalla de Juego -->
+    <string name="status_good_luck">¡Buena suerte!</string>
+    <string name="status_game_over">💥 ¡Game Over! Has pisado una mina.</string>
+    <string name="status_win">🎉 ¡Felicidades, ganaste en %d s!</string>
+    <string name="mode_cell">🏳️ Modo: Casilla</string>
+    <string name="mode_flag">🚩 Modo: Bandera</string>
+    <string name="timer_initial">⏱️ 0s</string>
+    <string name="mines_counter_format">🚩 %d / %d</string>
+
+    <!-- Pantalla de Puntuaciones -->
+    <string name="scores_title">Mejores Puntuaciones</string>
+    <string name="no_scores">Todavía no hay récords registrados.\n¡Juega una partida y gana!</string>
+    <string name="btn_back">Volver</string>
+
+    <!-- Medallas / Puestos -->
+    <string name="score_first">🥇 1º Lugar:</string>
+    <string name="score_second">🥈 2º Lugar:</string>
+    <string name="score_third">🥉 3º Lugar:</string>
+    <string name="score_other">• %dº Lugar:</string>
 </resources>

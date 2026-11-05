@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
-    android:background="#1E1E2E">
+    android:background="#1E1E2E"
+    android:paddingTop="40dp">
 
     <!-- Icono o Título Principal -->
     <TextView
@@ -25,6 +26,9 @@
         android:letterSpacing="0.1"
         android:layout_marginBottom="48dp"/>
 
+
+
+
     <!-- Botón Jugar -->
     <Button
         android:id="@+id/btnPlay"
@@ -35,6 +39,18 @@
         android:textStyle="bold"
         android:backgroundTint="#50FA7B"
         android:textColor="#1E1E2E"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/btnPlayHard"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="Modo dificil"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FF5555"
+        android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp"/>
 
     <!-- Botón Puntuaciones -->

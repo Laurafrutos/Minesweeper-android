@@ -21,10 +21,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var board: Array<Array<Cell>>
     private lateinit var buttonsBoard: Array<Array<Button>>
 
-    val rows = 8
-    val cols = 8
-    val totalmines = 10
+    var rows = 8
+    var cols = 8
+    var totalmines = 10
     var flagsCount = 0
+
+    var isFlagModeEnabled = false
 
     var isgameover = false
     var isfirstclick = true
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        rows = intent.getIntExtra("EXTRA_ROWS", 8)
+        cols = intent.getIntExtra("EXTRA_COLS", 8)
+        totalmines = intent.getIntExtra("EXTRA_MINES", 10)
+
         // 1. Inflamos el layout con View Binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -43,6 +49,21 @@ class MainActivity : AppCompatActivity() {
         // 2. Configuramos el GridLayout
         binding.gridLayoutBoard.columnCount = cols
         binding.gridLayoutBoard.rowCount = rows
+
+        binding.btnFlagMode.setOnClickListener {
+            isFlagModeEnabled = !isFlagModeEnabled
+            if (isFlagModeEnabled){
+                binding.btnFlagMode.text = "🚩 Modo: Bandera"
+                binding.btnFlagMode.setBackgroundColor(Color.parseColor("#FF5555")) // Rojo cuando está activo
+            } else {
+                binding.btnFlagMode.text = "🏳️ Modo: Casilla"
+                binding.btnFlagMode.setBackgroundColor(Color.parseColor("#3B3B4F")) // Color nor
+            }
+        }
+
+
+
+
 
         // 3. Listener del botón de reinicio
         binding.btnReset.setOnClickListener {
@@ -81,7 +102,11 @@ class MainActivity : AppCompatActivity() {
 
     fun CreateCellButton(row: Int, col: Int): Button {
         val button = Button(this).apply {
-            textSize = 14f
+            textSize = if(rows > 10) 11f else 14f
+
+            setPadding(0,0,0,0)
+            minimumWidth = 0
+            minimumHeight = 0
             typeface = Typeface.DEFAULT_BOLD
             gravity = Gravity.CENTER
             setBackgroundColor(Color.parseColor("#3B3B4F"))
@@ -96,7 +121,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             setOnClickListener {
-                oncellclicked(row, col)
+                if (isFlagModeEnabled){
+                    onCellLongClicked(row,col)
+                } else{
+                    oncellclicked(row, col)
+                }
+
             }
 
             setOnLongClickListener {
@@ -161,8 +191,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun updateMinesCounter() {
-        val remaining = totalmines - flagsCount
-        binding.tvMines.text = "💣 $remaining"
+        // Mostramos cuántas banderas llevas puestas frente al total de minas (Ej: 🚩 3 / 10)
+        binding.tvMines.text = "🚩 $flagsCount / $totalmines"
+
+        // Si te pasas poniendo banderas, ponemos el texto en rojo para avisarte
+        if (flagsCount > totalmines) {
+            binding.tvMines.setTextColor(Color.parseColor("#FF5555")) // Rojo aviso
+        } else {
+            binding.tvMines.setTextColor(Color.WHITE) // Color normal
+        }
     }
 
     fun placemines(avoidRow: Int, avoidCol: Int) {

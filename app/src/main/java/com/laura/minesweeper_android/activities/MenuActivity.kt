@@ -14,16 +14,27 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-        val prefs = getSharedPreferences("MinesweeperPrefs", MODE_PRIVATE)
-        prefs.edit().putString("best_scores", "15,22,35").apply()
-
-        // Botón Jugar -> Abre la MainActivity del Buscaminas
         binding.btnPlay.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java).apply {
+                putExtra("EXTRA_ROWS",8)
+                putExtra("EXTRA_COLS",8)
+                putExtra("EXTRA_MINES",10)
+            }
             startActivity(intent)
         }
+
+        binding.btnPlayHard.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java).apply {
+                putExtra("EXTRA_ROWS",12)
+                putExtra("EXTRA_COLS",12)
+                putExtra("EXTRA_MINES",25)
+            }
+            startActivity(intent)
+        }
+
+
+
+
 
         // Botón Puntuaciones -> Abre la pantalla de récords
         binding.btnScores.setOnClickListener {
