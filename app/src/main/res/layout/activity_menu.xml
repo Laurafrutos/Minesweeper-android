@@ -8,7 +8,7 @@
     android:background="#1E1E2E"
     android:paddingTop="40dp">
 
-    <!-- Icono o Título Principal -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
 
 
 
-    <!-- Botón Jugar -->
+
     <Button
         android:id="@+id/btnPlay"
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         android:id="@+id/btnPlayHard"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:text="Modo dificil"
+        android:text="🔥 Modo dificil "
         android:textSize="16sp"
         android:textStyle="bold"
         android:backgroundTint="#FF5555"
@@ -65,7 +65,7 @@
         android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Botón Salir -->
+
     <Button
         android:id="@+id/btnExit"
         android:layout_width="match_parent"

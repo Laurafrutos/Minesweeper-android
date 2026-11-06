@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="32dp"/>
 
-    <!-- Tarjeta o contenedor para listar las puntuaciones -->
+
     <TextView
         android:id="@+id/tvScoresList"
         android:layout_width="match_parent"

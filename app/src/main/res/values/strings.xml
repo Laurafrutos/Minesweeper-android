@@ -20,7 +20,7 @@
 
     <!-- Pantalla de Puntuaciones -->
     <string name="scores_title">Mejores Puntuaciones</string>
-    <string name="no_scores">Todavía no hay récords registrados.\n¡Juega una partida y gana!</string>
+    <string name="no_scores">Todavía no hay récords registrados.</string>
     <string name="btn_back">Volver</string>
 
     <!-- Medallas / Puestos -->
